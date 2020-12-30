@@ -6,13 +6,13 @@
  *
  */
 
-import {useState, unstable_useTransition} from 'react';
+import {useState, unstable_useTransition} from "react";
 
-import {useLocation} from './LocationContext.client';
-import Spinner from './Spinner';
+import {useLocation} from "./LocationContext.client";
+import Spinner from "./Spinner";
 
 export default function SearchField() {
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const [startSearching, isSearching] = unstable_useTransition(false);
   const [, setLocation] = useLocation();
   return (

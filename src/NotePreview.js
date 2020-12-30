@@ -6,7 +6,7 @@
  *
  */
 
-import TextWithMarkdown from './TextWithMarkdown';
+import TextWithMarkdown from "./TextWithMarkdown";
 
 export default function NotePreview({body}) {
   return (

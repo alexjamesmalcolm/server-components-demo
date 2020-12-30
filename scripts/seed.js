@@ -6,20 +6,20 @@
  *
  */
 
-'use strict';
+"use strict";
 
-const fs = require('fs');
-const path = require('path');
-const {readdir, unlink, writeFile} = require('fs/promises');
-const {db} = require('../src/db.server');
+const fs = require("fs");
+const path = require("path");
+const {readdir, unlink, writeFile} = require("fs/promises");
+const {db} = require("../src/db.server");
 
-const NOTES_PATH = './notes';
+const NOTES_PATH = "./notes";
 
 async function seed() {
   const oldNotes = await readdir(path.resolve(NOTES_PATH));
   await Promise.all(
     oldNotes
-      .filter((filename) => filename.endsWith('.md'))
+      .filter((filename) => filename.endsWith(".md"))
       .map((filename) => unlink(path.resolve(NOTES_PATH, filename)))
   );
 

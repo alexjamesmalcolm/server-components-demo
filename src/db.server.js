@@ -6,7 +6,7 @@
  *
  */
 
-const startOfYear = require('date-fns/startOfYear');
+const startOfYear = require("date-fns/startOfYear");
 
 const now = new Date();
 const startOfThisYear = startOfYear(now);
@@ -22,14 +22,14 @@ const db = [
     id: 0,
     created_at: randomDateBetween(startOfThisYear, now),
     updated_at: now,
-    title: 'Meeting Notes',
-    body: 'This is an example note. It contains **Markdown**!',
+    title: "Meeting Notes",
+    body: "This is an example note. It contains **Markdown**!",
   },
   {
     id: 1,
     created_at: randomDateBetween(startOfThisYear, now),
     updated_at: now,
-    title: 'Make a thing',
+    title: "Make a thing",
     body: `It's very easy to make some words **bold** and other words *italic* with Markdown. You can even [link to React's website!](https://www.reactjs.org).`,
   },
   {
@@ -37,7 +37,7 @@ const db = [
     created_at: randomDateBetween(startOfThisYear, now),
     updated_at: now,
     title:
-      'A note with a very long title because sometimes you need more words',
+      "A note with a very long title because sometimes you need more words",
     body: `You can write all kinds of [amazing](https://en.wikipedia.org/wiki/The_Amazing)
 notes in this app! These note live on the server in the \`notes\` folder.
     
@@ -47,8 +47,8 @@ notes in this app! These note live on the server in the \`notes\` folder.
     id: 3,
     created_at: now,
     updated_at: now,
-    title: 'I wrote this note today',
-    body: 'It was an excellent note.',
+    title: "I wrote this note today",
+    body: "It was an excellent note.",
   },
 ];
 

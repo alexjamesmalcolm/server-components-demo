@@ -6,10 +6,10 @@
  *
  */
 
-import {fetch} from 'react-fetch';
+import {fetch} from "react-fetch";
 
-import {searchNotes} from './db.server';
-import SidebarNote from './SidebarNote';
+import {searchNotes} from "./db.server";
+import SidebarNote from "./SidebarNote";
 
 export default function NoteList({searchText}) {
   // const notes = fetch('http://localhost:4000/notes').json();
@@ -31,7 +31,7 @@ export default function NoteList({searchText}) {
     <div className="notes-empty">
       {searchText
         ? `Couldn't find any notes titled "${searchText}".`
-        : 'No notes created yet!'}{' '}
+        : "No notes created yet!"}{" "}
     </div>
   );
 }

@@ -6,12 +6,12 @@
  *
  */
 
-import {useState, unstable_useTransition} from 'react';
-import {createFromReadableStream} from 'react-server-dom-webpack';
+import {useState, unstable_useTransition} from "react";
+import {createFromReadableStream} from "react-server-dom-webpack";
 
-import NotePreview from './NotePreview';
-import {useRefresh} from './Cache.client';
-import {useLocation} from './LocationContext.client';
+import NotePreview from "./NotePreview";
+import {useRefresh} from "./Cache.client";
+import {useLocation} from "./LocationContext.client";
 
 export default function NoteEditor({noteId, initialTitle, initialBody}) {
   const refresh = useRefresh();
@@ -21,11 +21,11 @@ export default function NoteEditor({noteId, initialTitle, initialBody}) {
   const [startNavigating, isNavigating] = unstable_useTransition();
   const [isSaving, saveNote] = useMutation({
     endpoint: noteId !== null ? `/notes/${noteId}` : `/notes`,
-    method: noteId !== null ? 'PUT' : 'POST',
+    method: noteId !== null ? "PUT" : "POST",
   });
   const [isDeleting, deleteNote] = useMutation({
     endpoint: `/notes/${noteId}`,
-    method: 'DELETE',
+    method: "DELETE",
   });
 
   async function handleSave() {
@@ -51,7 +51,7 @@ export default function NoteEditor({noteId, initialTitle, initialBody}) {
   }
 
   function navigate(response) {
-    const cacheKey = response.headers.get('X-Location');
+    const cacheKey = response.headers.get("X-Location");
     const nextLocation = JSON.parse(cacheKey);
     const seededResponse = createFromReadableStream(response.body);
     startNavigating(() => {
@@ -152,7 +152,7 @@ function useMutation({endpoint, method}) {
           method,
           body: JSON.stringify(payload),
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
         }
       );

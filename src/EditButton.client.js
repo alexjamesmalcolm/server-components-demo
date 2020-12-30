@@ -6,9 +6,9 @@
  *
  */
 
-import {unstable_useTransition} from 'react';
+import {unstable_useTransition} from "react";
 
-import {useLocation} from './LocationContext.client';
+import {useLocation} from "./LocationContext.client";
 
 export default function EditButton({noteId, children}) {
   const [, setLocation] = useLocation();
@@ -17,9 +17,9 @@ export default function EditButton({noteId, children}) {
   return (
     <button
       className={[
-        'edit-button',
-        isDraft ? 'edit-button--solid' : 'edit-button--outline',
-      ].join(' ')}
+        "edit-button",
+        isDraft ? "edit-button--solid" : "edit-button--outline",
+      ].join(" ")}
       disabled={isPending}
       onClick={() => {
         startTransition(() => {

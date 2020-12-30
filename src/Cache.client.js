@@ -6,8 +6,8 @@
  *
  */
 
-import {unstable_getCacheForType, unstable_useCacheRefresh} from 'react';
-import {createFromFetch} from 'react-server-dom-webpack';
+import {unstable_getCacheForType, unstable_useCacheRefresh} from "react";
+import {createFromFetch} from "react-server-dom-webpack";
 
 function createResponseCache() {
   return new Map();
@@ -28,7 +28,7 @@ export function useServerResponse(location) {
     return response;
   }
   response = createFromFetch(
-    fetch('/react?location=' + encodeURIComponent(key))
+    fetch("/react?location=" + encodeURIComponent(key))
   );
   cache.set(key, response);
   return response;

@@ -6,9 +6,9 @@
  *
  */
 
-import {useState, useRef, useEffect, unstable_useTransition} from 'react';
+import {useState, useRef, useEffect, unstable_useTransition} from "react";
 
-import {useLocation} from './LocationContext.client';
+import {useLocation} from "./LocationContext.client";
 
 export default function SidebarNote({id, title, children, expandedChildren}) {
   const [location, setLocation] = useLocation();
@@ -22,7 +22,7 @@ export default function SidebarNote({id, title, children, expandedChildren}) {
   useEffect(() => {
     if (title !== prevTitleRef.current) {
       prevTitleRef.current = title;
-      itemRef.current.classList.add('flash');
+      itemRef.current.classList.add("flash");
     }
   }, [title]);
 
@@ -30,24 +30,24 @@ export default function SidebarNote({id, title, children, expandedChildren}) {
     <div
       ref={itemRef}
       onAnimationEnd={() => {
-        itemRef.current.classList.remove('flash');
+        itemRef.current.classList.remove("flash");
       }}
       className={[
-        'sidebar-note-list-item',
-        isExpanded ? 'note-expanded' : '',
-      ].join(' ')}>
+        "sidebar-note-list-item",
+        isExpanded ? "note-expanded" : "",
+      ].join(" ")}>
       {children}
       <button
         className="sidebar-note-open"
         style={{
           backgroundColor: isPending
-            ? 'var(--gray-80)'
+            ? "var(--gray-80)"
             : isActive
-            ? 'var(--tertiary-blue)'
-            : '',
+            ? "var(--tertiary-blue)"
+            : "",
           border: isActive
-            ? '1px solid var(--primary-border)'
-            : '1px solid transparent',
+            ? "1px solid var(--primary-border)"
+            : "1px solid transparent",
         }}
         onClick={() => {
           startTransition(() => {
